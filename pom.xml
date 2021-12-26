@@ -99,7 +99,7 @@
                 <artifactId>really-executable-jar-maven-plugin</artifactId>
                 <version>1.4.1</version>
                 <configuration>
-                    <programFile>ia-rcade</programFile>
+                    <programFile>JrebelBrainsLicenseServerforJava</programFile>
                 </configuration>
                 <executions>
                     <execution>
