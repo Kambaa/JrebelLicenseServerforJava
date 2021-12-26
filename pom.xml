@@ -7,6 +7,7 @@
     <groupId>com.vvvtimes.com</groupId>
     <artifactId>JrebelBrainsLicenseServerforJava</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,6 +52,47 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.24</version>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>console</headerType>
+                            <outfile>target/JrebelBrainsLicenseServerforJava.exe</outfile>
+                            <jar>target/JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
+                            <errTitle>JrebelBrainsLicenseServerforJava</errTitle>
+                            <classPath>
+                                <mainClass>com.vvvtimes.server.MainServer</mainClass>
+                                <addDependencies>false</addDependencies>
+                                <preCp>anything</preCp>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.8.0</minVersion>
+                            </jre>
+                            <versionInfo>
+                                <fileVersion>0.0.0.1</fileVersion>
+                                <txtFileVersion>first</txtFileVersion>
+                                <fileDescription>JrebelBrainsLicenseServerforJava executable</fileDescription>
+                                <copyright>github.com/Kambaa</copyright>
+                                <productVersion>0.0.0.1</productVersion>
+                                <txtProductVersion>0.0.0.1</txtProductVersion>
+                                <productName>JrebelBrainsLicenseServerforJava</productName>
+                                <internalName>JrebelBrainsLicenseServerforJava</internalName>
+                                <originalFilename>JrebelBrainsLicenseServerforJava.exe</originalFilename>
+                            </versionInfo>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
